@@ -1,0 +1,168 @@
+/* 經彩青春 SET：舞臺式互動劇場。所有原稿內容由 data/scenes.js 管理。 */
+:root{--ink:#403947;--muted:#746a7b;--rose:#a94c6e;--rose-dark:#8d3554;--pink:#f7d6e2;--lavender:#e8def7;--cream:#fffaf4;--line:#eddde5;--mint:#2c8069;--shadow:0 18px 46px rgba(111,63,87,.12);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:radial-gradient(circle at 100% 0,#fbe5ec 0,transparent 30%),radial-gradient(circle at 0 80%,#ece8fc 0,transparent 40%),#fffaf7;color:var(--ink);line-height:1.65}
+button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #9d75d3;outline-offset:3px}button:disabled{cursor:not-allowed;opacity:.55}[hidden]{display:none!important}img{max-width:100%}h1,h2,p{overflow-wrap:anywhere}
+.shell{max-width:1320px;margin:auto;padding:0 clamp(14px,3vw,36px);min-height:100vh;display:flex;flex-direction:column}main{flex:1}
+.topbar{min-height:92px;padding:13px 4px;border-bottom:1px solid #ead6df;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;min-width:0}.brand-symbol{display:grid;place-items:center;width:51px;height:51px;flex:0 0 auto;background:linear-gradient(140deg,#e899ad,#a677b1);color:#fff;border-radius:17px 17px 17px 7px;font-size:34px;box-shadow:0 5px 0 #f2dee7}
+.brand strong{display:block;font-size:22px;line-height:1.3;letter-spacing:-.03em}.brand strong em{font-size:14px;color:var(--rose);font-style:normal}.brand small{color:var(--muted);font-size:12px;display:block;font-weight:700;margin-top:3px}
+.top-meta{display:flex;align-items:center;justify-content:flex-end;gap:9px;flex-wrap:wrap}.meta-pill{background:#f5ebf7;color:#755382;border-radius:50px;padding:8px 13px;font-size:13px;font-weight:850;white-space:nowrap}.meta-progress{background:#fae6ee;color:#a44769}.meta-stars{background:#fff1cc;color:#9d6b11}
+.text-button{border:1px solid #e1c6d0;color:var(--rose-dark);background:#fff;border-radius:12px;font-weight:800;padding:8px 12px;font-size:13px}
+.button{border:0;border-radius:16px;padding:13px 24px;min-height:54px;font-size:17px;font-weight:900;display:inline-flex;justify-content:center;align-items:center;gap:10px;transition:background .18s,transform .18s,box-shadow .18s}.button.primary{background:var(--rose);color:#fff;box-shadow:0 6px 0 #7c3450}.button.primary:hover:not(:disabled){background:var(--rose-dark)}.button.secondary{background:#fff;border:2px solid #e7cbd7;color:#8a4663}.button.secondary:hover:not(:disabled){background:#fff1f5}.button:active:not(:disabled){transform:translateY(2px);box-shadow:none}.button:disabled{box-shadow:none}
+.eyebrow{font-size:15px;letter-spacing:.055em;font-weight:900;color:#a04973;margin:0}.eyebrow.small{font-size:12px}
+.welcome{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:clamp(24px,4vw,65px);align-items:center;padding:58px 0 64px}
+.welcome-copy h1{font-size:clamp(54px,6vw,89px);letter-spacing:-.07em;line-height:1.25;margin:12px 0 17px;font-weight:1000}.welcome-copy h1 span{display:block;color:var(--rose)}.intro{font-size:clamp(17px,1.5vw,20px);color:#655b6b;max-width:580px;line-height:1.95}
+.intro-stats{display:flex;flex-wrap:wrap;gap:9px;margin:23px 0 26px}.intro-stats span{padding:9px 13px;border:1px solid #efd7e2;background:#fff;border-radius:40px;font-weight:850;font-size:13px}
+.howto{background:rgba(255,255,255,.8);border-left:4px solid #e7a9bd;border-radius:0 17px 17px 0;padding:13px 19px;margin-bottom:24px}.howto h2{margin:0 0 7px;font-size:20px}.howto p{font-size:14px;margin:7px 0;color:#6b6070}.howto b{color:#9b4265}.hero-action{min-width:250px;min-height:62px}
+.welcome-art{background:linear-gradient(150deg,#f6dbe6 0%,#ebe4fa 60%,#fff0dc 100%);border:1px solid #eacbd8;border-radius:32px;padding:29px 17px 21px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.welcome-decor{position:absolute;color:#ffffff8c;font-size:61px;top:-16px;right:9px;letter-spacing:22px;white-space:nowrap;pointer-events:none}.welcome-art-label{font-size:16px;color:#874966;font-weight:900;position:relative;text-align:center;margin:5px 0 12px}
+.roster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:end;gap:4px;position:relative}.roster-person{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}.roster-person img{width:100%;max-height:253px;object-fit:contain;filter:drop-shadow(0 10px 8px #84536f29)}.roster-person strong{background:#fff;border-radius:100px;padding:4px 12px;color:#75485d;font-size:13px;white-space:nowrap}.roster-person small{color:#795e78;font-size:11px;text-align:center;font-weight:800;line-height:1.5;min-height:33px}.welcome-art-foot{text-align:center;color:#775d74;font-size:13px;font-weight:800;margin:22px 0 1px}
+.play{padding:27px 0 45px}.play-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:16px}.play-head h1{font-size:clamp(24px,2.8vw,36px);line-height:1.4;margin:5px 0 0}.progress-meta{display:flex;align-items:center;gap:8px;white-space:nowrap;font-weight:900;color:#9b4567}.progress-meta span{border-radius:50px;background:#fce9f0;padding:7px 12px}.progress-meta span+span{color:#8b7690;background:#f6f0f5}
+.progress-track{height:9px;background:#f0e2e9;overflow:hidden;border-radius:50px;margin-bottom:20px}.progress-track>div{height:100%;width:0;border-radius:50px;background:linear-gradient(90deg,#ee91ab,#b57cd0);transition:width .25s}
+.theatre{background:#fff;border-radius:27px;border:1px solid #e9d7e3;box-shadow:var(--shadow);padding:9px;overflow:hidden}
+.stage-art{border-radius:21px;position:relative;overflow:hidden;min-height:410px;padding:17px 19px 0;background:linear-gradient(180deg,#e9f4fd 0%,#fbf2f5 63%,#e8cad4 64%,#f5e6e3 100%);isolation:isolate}
+.stage-art:before{content:"";position:absolute;z-index:-1;left:0;right:0;top:66%;height:3px;background:#ffffffb9}
+.stage-art:after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:17%;background:repeating-linear-gradient(90deg,#ffffff33 0 1px,transparent 1px 88px)}
+.stage-art.location-classroom{background:linear-gradient(180deg,#fcf3e5 0%,#fff5ed 65%,#e9d7be 66%,#efdfc9 100%)}
+.stage-art.location-classroom .scene-decor-one{width:54%;height:190px;left:8%;top:76px;border:12px solid #bd8d66;border-radius:9px;background:#7faba1;box-shadow:0 7px 0 #8e6f5b;opacity:.55}
+.stage-art.location-classroom .scene-decor-two{width:15%;height:190px;right:7%;top:72px;border:10px solid #c4a37c;border-radius:7px;background:linear-gradient(90deg,#d9eff5 49%,#c9e3eb 50%);opacity:.65}
+.stage-art.location-clinic{background:linear-gradient(180deg,#e2f8f2 0%,#f9fefb 64%,#daebe6 65%,#edf5f0 100%)}
+.stage-art.location-clinic .scene-decor-one{width:24%;height:125px;left:7%;top:87px;border:9px solid #acd7ce;border-radius:9px;background:linear-gradient(90deg,#e9faf8 49%,#c1e8e2 50%)}
+.stage-art.location-clinic .scene-decor-two{width:100px;height:100px;right:10%;top:81px;background:#fff;border-radius:19px;box-shadow:0 4px 13px #4b96802a}
+.stage-art.location-clinic .scene-decor-two:after{content:"+";font-size:85px;font-weight:900;color:#8bcbb8;position:absolute;inset:-16px 0 0;display:grid;place-items:center}
+.stage-art.location-sports .scene-decor-one{width:18%;height:120px;left:7%;top:91px;background:#f9fffd;border-radius:10px;opacity:.35}
+.stage-art.location-sports .scene-decor-two{width:27%;height:8px;right:5%;top:175px;background:#ffffff7c;transform:rotate(-12deg);border-radius:100px}
+.scene-decor{position:absolute;z-index:-1;pointer-events:none}
+.theatre-banner{display:flex;justify-content:space-between;align-items:center;gap:10px;position:relative;z-index:5}.theatre-banner span{display:inline-flex;background:#fffdeef0;border:1px solid #ffffff;color:#8d4c70;font-size:14px;font-weight:900;border-radius:35px;padding:7px 15px;box-shadow:0 4px 14px #99668021}.theatre-banner span+span{background:#ffffffcd;color:#8b698c;font-size:12px}
+.narration{position:relative;z-index:5;max-width:780px;margin:16px auto 0;background:#ffffffed;border:1px solid #f1dbe7;border-left:6px solid #dfa1b6;border-radius:17px;padding:12px 19px;box-shadow:0 5px 13px #68425119;text-align:center;font-size:15px;font-weight:750;color:#765b70}
+.cast{position:relative;display:flex;justify-content:center;align-items:end;gap:8px;min-height:310px;padding:95px 14px 0}.cast.actor-count-1{gap:0}.actor{position:relative;flex:0 1 236px;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;opacity:.66;transform:scale(.96);transform-origin:center bottom;transition:opacity .25s,transform .25s;z-index:2}.actor.is-focus{opacity:1;transform:scale(1.025);z-index:3}
+.actor .portrait{max-width:100%;width:205px;height:205px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 8px 9px #5c415e27)}.actor.is-focus .portrait{filter:drop-shadow(0 11px 12px #5c415e40)}
+.actor-name{background:#fff;border:1px solid #ead6e4;box-shadow:0 5px 12px #7d506c18;border-radius:90px;padding:4px 12px;min-width:60px;text-align:center;font-size:14px;font-weight:900;color:#734864;white-space:nowrap;margin-top:-2px;margin-bottom:9px}
+.actor-bubble{position:absolute;bottom:235px;left:50%;transform:translateX(-50%);width:clamp(140px,19vw,258px);background:#fff;border:1px solid #e7d6e4;border-radius:17px;padding:10px 12px;text-align:center;font-size:14px;line-height:1.6;font-weight:800;box-shadow:0 6px 17px #71527524;color:#483c4d;overflow:visible}
+.actor-bubble:after{content:"";position:absolute;left:50%;bottom:-9px;transform:translateX(-50%) rotate(45deg);width:16px;height:16px;background:white;border-right:1px solid #e7d6e4;border-bottom:1px solid #e7d6e4}
+.actor-bubble span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.actor-bubble small{display:block;font-size:10px;color:#9d5272;margin:2px 0 -2px}
+.actor.is-focus .actor-bubble{border-color:#d5a1b6;box-shadow:0 8px 19px #a0648431}
+.stage-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:12px;color:#765f72;font-weight:850;margin:-3px 0 0;position:relative;z-index:4;padding:6px 0 11px}
+.story-card,.quiz-card{margin-top:18px;border:1px solid #e9dce6;background:#fff;border-radius:23px;padding:clamp(17px,2.3vw,27px);box-shadow:0 7px 22px #81516b0d}
+.section-heading{display:flex;gap:14px;align-items:center;margin-bottom:16px}.section-icon{height:45px;width:45px;display:grid;place-items:center;font-size:23px;background:#fce8ef;border-radius:13px;flex:0 0 auto}.section-heading p{margin:0;font-size:12px;font-weight:900;letter-spacing:.07em;color:#a05878}.section-heading h2{margin:2px 0 0;font-size:clamp(19px,2vw,24px);line-height:1.5}
+.story-lines{display:grid;gap:11px}.story-line{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:start;gap:10px}.story-line strong{background:#f4eafa;color:#794b87;border-radius:10px;padding:8px 5px;text-align:center;font-size:14px}.story-line p{background:#faf8fb;border:1px solid #f1eaf0;border-radius:14px;padding:11px 15px;margin:0;line-height:1.9;font-size:16px;font-weight:650}.story-line.narrator strong{background:#f7ecd8;color:#836637}.story-line.narrator p{background:#fffdf8}
+.quiz-card{border:2px solid #e3bccc;background:linear-gradient(155deg,#fff,#fffafd)}.quiz-card .section-heading{align-items:flex-start}.quiz-card .section-heading h2{font-size:clamp(20px,2.5vw,26px)}.icon-question{font-weight:950;color:#fff;background:#ba6b92}
+.options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.option{display:flex;align-items:flex-start;text-align:left;gap:10px;background:#fff;border:2px solid #ecdce5;border-radius:16px;padding:17px 12px;min-height:97px;color:#4c4150;font-size:16px;font-weight:800;line-height:1.65;transition:border .2s,background .2s}.option:hover:not(:disabled){border-color:#b47a9d;background:#fff5f9}.option-letter{width:32px;height:32px;border-radius:11px;display:grid;place-items:center;flex:0 0 auto;background:#f8e6ef;color:#aa4c74;font-weight:950}.option.correct{background:#eaf8f0;border-color:#58ab83;color:#236a4c}.option.correct .option-letter{background:#cdeedb;color:#286b4e}.option.wrong{background:#fff1f2;border-color:#de8a99;color:#903c4c}.option.wrong .option-letter{background:#f7dbe0;color:#903c4c}
+.feedback{border-radius:13px;margin-top:14px;padding:13px 17px;font-size:15px;font-weight:850;line-height:1.8}.feedback.is-correct{background:#e8f8ef;color:#276f50}.feedback.is-wrong{background:#fff0f2;color:#9b4156}
+.achievement{margin-top:18px;border:2px solid #ead495;border-radius:22px;background:linear-gradient(130deg,#fffcf2,#fff0c8);padding:19px 22px;display:flex;align-items:center;gap:18px;color:#74521f}.medal{font-size:34px;display:grid;place-items:center;width:65px;height:65px;background:#ffe2a2;border-radius:19px;flex:0 0 auto}.achievement p{margin:0;font-size:13px;font-weight:900;letter-spacing:.06em}.achievement h2{font-size:24px;margin:3px 0}.achievement span{font-size:14px;font-weight:700}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:19px 2px 8px}.controls p{text-align:center;flex:1;font-size:13px;color:#817288;font-weight:700;margin:0}
+.finish{max-width:760px;text-align:center;margin:38px auto 65px;padding:30px;background:#fff;border:1px solid #eddbe4;box-shadow:var(--shadow);border-radius:30px}.finish h1{font-size:clamp(30px,5vw,46px);margin:12px 0}.finish-lead{font-size:18px;color:#6d6070}.finish-cast{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;align-items:end;margin:10px auto 20px;max-width:540px}.finish-cast img{width:100%;height:160px;object-fit:contain}.code-card{max-width:370px;margin:auto;background:linear-gradient(130deg,#a45983,#8465a4);border-radius:22px;padding:18px 28px;color:white;box-shadow:0 12px 27px #8751762d}.code-card p{font-weight:900;margin:0}.code-card strong{font-size:52px;letter-spacing:.17em;display:block;margin:8px 0 3px}.code-card span{font-size:18px;font-weight:900}.finish-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:23px}.copy-status{font-size:14px;color:var(--mint);font-weight:800;min-height:24px}
+.footer{display:flex;justify-content:space-between;gap:12px;padding:18px 3px 23px;border-top:1px solid #f0dee6;color:#8c7b8c;font-size:12px;font-weight:800}
+@media(max-width:970px){.welcome{grid-template-columns:1fr;gap:25px;padding-top:35px}.welcome-art{max-width:780px;width:100%;margin:auto}.roster-person img{max-height:230px}.actor .portrait{width:170px;height:177px}.actor-bubble{bottom:204px;width:clamp(120px,23vw,200px);font-size:12px;padding:8px}.cast{min-height:290px}.stage-art{min-height:400px}}
+@media(max-width:650px){.shell{padding:0 11px}.topbar{min-height:75px}.brand{gap:8px}.brand-symbol{width:39px;height:39px;border-radius:12px;font-size:25px}.brand strong{font-size:17px}.brand strong em{font-size:11px}.brand small{font-size:10px}.meta-pill{font-size:10px;padding:6px 8px}.top-meta{gap:5px}.top-meta .meta-pill:first-child{display:none}.text-button{font-size:11px;padding:7px}.welcome{padding:30px 0 42px}.welcome-copy h1{font-size:clamp(48px,11vw,66px)}.intro{font-size:16px}.intro-stats span{font-size:11px;padding:7px 9px}.roster-person img{height:145px}.roster-person strong{font-size:11px;padding:4px 8px}.roster-person small{font-size:9px}.welcome-art{padding:20px 10px}.play{padding-top:17px}.play-head{align-items:center}.play-head h1{font-size:21px}.progress-meta{gap:4px;font-size:11px}.progress-meta span{padding:5px 7px}.stage-art{min-height:270px;padding:11px 8px 0}.theatre-banner span{font-size:11px;padding:5px 9px}.theatre-banner span+span{font-size:10px}.narration{font-size:12px;padding:8px 10px;margin:9px auto 0}.cast{min-height:205px;padding:50px 3px 0;gap:0}.actor{flex:0 1 25%}.actor .portrait{width:100%;height:134px}.actor-bubble{display:none}.actor-name{padding:3px 6px;min-width:0;font-size:11px;margin-bottom:4px}.actor.is-focus{transform:scale(1.05)}.stage-footer{font-size:10px;gap:8px}.story-card,.quiz-card{margin-top:12px;border-radius:18px;padding:14px}.section-heading{gap:9px}.section-heading h2{font-size:18px}.section-icon{height:35px;width:35px;font-size:18px;flex:0 0 auto}.story-line{grid-template-columns:49px minmax(0,1fr);gap:6px}.story-line strong{font-size:12px;padding:8px 2px}.story-line p{padding:9px 10px;font-size:15px}.options{grid-template-columns:1fr;gap:8px}.option{min-height:52px;padding:11px;align-items:center;font-size:15px}.option-letter{width:29px;height:29px;flex:0 0 auto}.feedback{font-size:14px}.achievement{padding:14px;gap:10px}.medal{height:48px;width:48px;font-size:25px}.achievement h2{font-size:20px}.achievement span{font-size:12px}.controls{gap:8px;flex-wrap:wrap}.controls .button{flex:1 1 calc(50% - 8px);min-width:0;font-size:15px;padding:9px 6px;min-height:50px}.controls p{flex:0 0 100%;order:3;font-size:12px}.footer{font-size:10px;flex-wrap:wrap}.finish{padding:20px 13px;margin:20px auto 40px}.finish-cast img{height:110px}.code-card strong{font-size:43px}.finish-buttons .button{width:100%}}
+@media(max-width:390px){.brand small{max-width:150px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.roster-person img{height:125px}.stage-footer span:last-child{display:none}.actor .portrait{height:125px}.stage-art{min-height:252px}.cast{min-height:192px}.play-head h1{font-size:19px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+/* 行動裝置以單一發言提示取代擁擠的多個文字泡；全文仍保留在劇情對話卡中。 */
+.narration p{margin:0}.narration p+p{margin-top:7px}
+.actor-mood{position:absolute;right:8%;bottom:48px;z-index:4;background:#fff8;border:1px solid #fff;border-radius:100%;height:30px;width:30px;display:grid;place-items:center;font-size:17px;box-shadow:0 4px 9px #79516b25}
+.mobile-spotlight{display:none}
+@media(max-width:650px){
+  .mobile-spotlight:not([hidden]){display:block;position:relative;z-index:5;max-width:100%;margin:10px 5px 0;padding:9px 13px;border:1px solid #f0d4e3;background:#fffefaed;border-radius:12px;text-align:center;color:#79556c;font-size:12px;font-weight:850;line-height:1.7}
+  .cast{padding-top:7px}
+  .actor-mood{width:23px;height:23px;font-size:13px;bottom:37px;right:0}
+}
+
+
+/* 2026-10-14 修訂：素材留白、劇情舞臺單一對話來源、循序編號、徽章置頂。 */
+.play>.achievement{margin:0 0 20px;border:2px solid #edcf7c;border-radius:22px;background:linear-gradient(125deg,#fffaf1,#fff0c4);padding:17px 22px;display:flex;align-items:center;gap:16px;box-shadow:0 9px 20px rgba(153,109,39,.12)}
+.play>.achievement[hidden]{display:none!important}
+.play>.achievement .medal{width:58px;height:58px;font-size:33px;border-radius:17px;background:#ffe5a5}
+.play>.achievement p{margin:0;color:#966027;font-size:14px;font-weight:950;letter-spacing:.045em}
+.play>.achievement h2{font-size:clamp(20px,2.2vw,27px);margin:1px 0 2px;color:#85551e;line-height:1.45}
+.play>.achievement span:not(.medal){font-size:13px;color:#825d2e;line-height:1.65}
+.stage-dialogues{position:relative;z-index:5;margin:22px auto 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:12px;max-width:1140px;align-items:stretch}
+.stage-bubble{min-width:0;background:#fffefaed;border:1.5px solid #e2b6c9;border-radius:19px;padding:14px 17px 15px;box-shadow:0 8px 22px rgba(111,63,87,.12);color:#4c3d4b}
+.stage-bubble-long{grid-column:1/-1;max-width:100%}
+.stage-bubble-narrator{background:#fffaf0ed;border-color:#e8d5af}
+.stage-bubble-head{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.bubble-order{width:29px;height:29px;border-radius:999px;background:#a44e71;color:#fff;display:grid;place-items:center;font-size:19px;line-height:1;flex:0 0 auto}
+.stage-bubble-narrator .bubble-order{background:#9f7a3d}
+.bubble-speaker{font-size:14px;font-weight:950;color:#884d69}
+.stage-bubble-narrator .bubble-speaker{color:#8c6f42}
+.stage-bubble p{margin:0;font-size:clamp(15px,1.42vw,18px);font-weight:730;line-height:1.85;white-space:pre-wrap;overflow-wrap:anywhere}
+.cast,.cast.actor-count-1{min-height:0;padding:14px 12px 1px;align-items:end;gap:clamp(6px,2vw,22px)}
+.cast .actor{flex:0 1 210px;opacity:.62;transform:scale(.97);gap:5px}
+.cast .actor.is-focus{opacity:1;transform:scale(1.01)}
+.portrait-slot,.roster-slot,.finish-slot{background:rgba(255,255,255,.28);border:2px dashed rgba(151,102,129,.43);border-radius:19px;display:flex;align-items:center;justify-content:center;color:#976b85}
+.portrait-slot{height:clamp(135px,16vw,214px);width:min(100%,188px);max-width:100%;margin:auto;box-shadow:inset 0 3px 12px #ffffff33}
+.slot-hint{font-size:12px;font-weight:760;opacity:.75;text-align:center;padding:10px;line-height:1.5;letter-spacing:.025em}
+.cast .actor-name{margin-top:5px;margin-bottom:9px}
+.roster-slot{width:100%;height:clamp(120px,18vw,225px);max-width:165px;background:#ffffff45}
+.roster-person{gap:8px}
+.finish-slot{min-width:0;height:145px;flex-direction:column;gap:8px;padding:10px}
+.finish-slot span{font-size:11px;color:#9d8592;font-weight:770}
+.finish-slot b{font-size:13px;color:#835a72}
+.stage-art{min-height:0}
+.stage-footer{margin-top:7px;padding:5px 0 11px}
+@media(max-width:850px){
+  .stage-dialogues{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));margin-top:15px}
+  .portrait-slot{height:160px}
+  .roster-slot{height:165px}
+}
+@media(max-width:650px){
+  .play>.achievement{padding:12px 13px;gap:10px;margin:0 0 13px;border-radius:17px}
+  .play>.achievement .medal{width:45px;height:45px;font-size:23px;flex:0 0 auto}
+  .play>.achievement p{font-size:11px}
+  .play>.achievement h2{font-size:19px}
+  .play>.achievement span:not(.medal){font-size:11px}
+  .stage-dialogues{display:flex;flex-direction:column;gap:9px;margin:12px 1px}
+  .stage-bubble{padding:10px 12px;border-radius:14px}
+  .stage-bubble-head{margin-bottom:4px}
+  .stage-bubble p{font-size:15px;line-height:1.8}
+  .bubble-order{height:25px;width:25px;font-size:16px}
+  .bubble-speaker{font-size:12px}
+  .cast,.cast.actor-count-1{min-height:0;padding:8px 2px 0;gap:5px}
+  .cast .actor{flex:1 1 0;min-width:0}
+  .portrait-slot{width:100%;height:100px;border-radius:11px}
+  .slot-hint{font-size:10px;padding:3px}
+  .cast .actor-name{font-size:11px;margin:4px 0}
+  .roster-slot{height:140px;border-radius:13px}
+  .finish-slot{height:105px;border-radius:12px}
+  .finish-slot span{font-size:9px}
+  .finish-slot b{font-size:11px}
+  .stage-art{min-height:0}
+}
+@media(max-width:390px){
+  .portrait-slot{height:85px}
+  .roster-slot{height:112px}
+}
+
+/* 17-pose PNG auto-import support: hide placeholders when an actual sprite exists. */
+.roster-slot.has-sprite,.portrait-slot.has-sprite,.finish-portrait.has-sprite{
+  border:0!important;background:transparent!important;box-shadow:none!important;
+  overflow:visible;display:flex;align-items:end;justify-content:center
+}
+.character-sprite{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.finish-portrait{width:100%;height:110px;display:flex;align-items:center;justify-content:center}
+.finish-slot:has(.finish-portrait){height:160px;border:0;background:transparent}
+@media(max-width:650px){
+  .finish-portrait{height:82px}
+  .finish-slot:has(.finish-portrait){height:120px}
+}
+
+/* 2026-10-17：首頁第一幕標示、單獨護理師講解與逐句揭露 */
+.first-scene-badge{display:inline-flex;align-items:center;vertical-align:middle;margin-right:6px;padding:3px 11px;border-radius:99px;background:#fff7fb;border:1px solid #e7a9c2;color:#a34f73;font-size:.84em;font-weight:950}
+.cast.actor-count-1 .actor{flex:0 1 260px;opacity:1;transform:scale(1)}
+.stage-bubble[hidden]{display:none!important}
+
+/* 國中篇專屬場景；正式立繪尚未提供，預留區不挪用國小角色。 */
+.stage-art.location-campus{background:linear-gradient(145deg,#f2f7ef 0%,#f7eaf4 48%,#fff5ed 100%)}
+.stage-art.location-home{background:linear-gradient(145deg,#fff3de 0%,#f1e5f4 54%,#f5f5ff 100%)}
+.stage-bubble p{white-space:pre-line}
+@media(max-width:650px){.welcome h1{font-size:clamp(35px,8vw,54px)}}
+
+/* 高中篇：保留國中版本舞臺布局，改採國際高峰會的舞臺色系與三人角色。 */
+.roster{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.finish-cast{justify-content:center}
+.stage-art.location-summit{background:linear-gradient(135deg,#edf3ff 0%,#f8eafb 52%,#fff5eb 100%)}
+.stage-art.location-dining{background:linear-gradient(135deg,#fff5e4 0%,#f3e9f6 55%,#ecf8fa 100%)}
+.stage-art.location-forum{background:linear-gradient(135deg,#e5edf9 0%,#ede6fa 55%,#fff0f4 100%)}
+.welcome-copy h1{font-size:clamp(36px,5.1vw,67px);letter-spacing:-.055em}
+@media(max-width:650px){.welcome-copy h1{font-size:clamp(32px,8vw,49px)}.roster{gap:4px}}
