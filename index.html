@@ -10,6 +10,9 @@
   <style>
     /* 高中篇為三位主角，避免原版通關頁四欄網格留下空白。 */
     .finish-cast{grid-template-columns:repeat(3,minmax(0,1fr));max-width:470px;}
+    /* 左上角圖標使用高中二字，與原本圖標框相同尺寸。 */
+    .brand-symbol.school-label{font-size:18px;font-weight:900;letter-spacing:0;line-height:1;}
+    @media(max-width:650px){.brand-symbol.school-label{font-size:14px;}}
     /* 首頁主題鎖定兩行：手機及桌機均不拆開 young talk。 */
     .welcome-copy .welcome-main-title{font-size:clamp(36px,4.8vw,64px);line-height:1.26;letter-spacing:-.055em;}
     .welcome-copy .welcome-main-title .title-line{display:block;white-space:nowrap;overflow-wrap:normal;}
@@ -20,7 +23,7 @@
       .welcome-copy .welcome-main-title .title-line:last-child{font-size:.72em;}
     }
   </style>
-  <script defer src="./data/scenes.js?v=sh20261025v2"></script>
+  <script defer src="./data/scenes.js?v=sh20261025v3"></script>
   <script defer src="./data/presence.js?v=sh20261025v2"></script>
   <script defer src="./data/character-poses.js?v=sh20261025v2"></script>
   <script defer src="./data/character-assets.js?v=sh20261025v2"></script>
@@ -30,7 +33,7 @@
 <div class="shell">
   <header class="topbar">
     <a class="brand" href="./" aria-label="經彩青春 SET 首頁">
-      <span class="brand-symbol" aria-hidden="true">✿</span>
+      <span class="brand-symbol school-label" aria-hidden="true">高中</span>
       <span><strong>經彩青春 <em>SET</em></strong><small>月經教育 × 概念形成</small></span>
     </a>
     <div class="top-meta">
@@ -42,7 +45,6 @@
   <main id="app">
     <section id="welcome" class="view welcome" aria-labelledby="welcomeTitle">
       <div class="welcome-copy">
-        <p class="eyebrow">月經教育 × 概念形成</p>
         <h1 id="welcomeTitle" class="welcome-main-title">
           <span class="title-line">守護 528：</span>
           <span class="title-line">青春同盟 young talk</span>
@@ -86,7 +88,7 @@
     <section id="finish" class="view finish" hidden aria-labelledby="finishTitle">
       <p class="eyebrow">✦ 12 題挑戰完成 ✦</p>
       <h1 id="finishTitle" tabindex="-1">恭喜你成功通關！</h1>
-      <p id="finishText" class="finish-lead"></p>
+      <p id="finishText" class="finish-lead" hidden></p>
       <div class="finish-cast" aria-label="三位故事夥伴"></div>
       <div class="code-card"><p>🏆 經彩青春 Set 密碼</p><strong id="unlockCode">0451</strong><span id="unlockMeaning">你是唯一</span></div>
       <div class="finish-buttons"><button id="copyCodeBtn" class="button secondary" type="button">複製通關密碼</button><button id="againBtn" class="button primary" type="button">再玩一次 ↻</button></div>
