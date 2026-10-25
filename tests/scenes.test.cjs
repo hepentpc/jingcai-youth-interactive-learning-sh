@@ -40,7 +40,7 @@ test('十二題順序、正確答案、知識回饋與角色符合提供的Word'
   assert.equal(data.ending.code,'0451');assert.equal(data.ending.meaning,'你是唯一');
 });
 
-test('每幕舞臺資料完整，不沿用其他學制人物圖片',()=>{
+test('每幕舞臺與人物圖對應完整，且啟用九張高中職角色圖片',()=>{
   assert.equal(Object.keys(stage.pages).length,data.pages.length);
   for(const p of data.pages){
     assert.ok(stage.pages[p.page]);
@@ -50,7 +50,22 @@ test('每幕舞臺資料完整，不沿用其他學制人物圖片',()=>{
     assert.ok(p.lines.every(l=>l.speaker&&l.text));
   }
   for(const name of ['青青','大春','馬拉拉'])assert.ok(poses.default[name]);
-  assert.equal(assets.ready,false);assert.equal(Object.keys(assets.files).length,0);
+  assert.equal(assets.ready,true);
+  assert.equal(Object.keys(assets.files).length,9);
+  for(const prefix of ['QQ','DC','ML']){
+    for(let i=1;i<=3;i++){
+      const pose='SH_'+prefix+String(i).padStart(2,'0');
+      assert.equal(assets.files[pose],'./assets/characters/'+pose+'.png');
+    }
+  }
+  assert.equal(Object.keys(poses.pages).length,26);
+  for(const p of data.pages){
+    for(const name of stage.pages[p.page].cast){
+      const pose=poses.pages[p.page][name]||poses.default[name];
+      assert.ok(assets.files[pose], '第 '+p.page+' 幕：'+name+' 尚未綁定有效圖檔');
+    }
+  }
+  for(const name of ['青青','大春','馬拉拉'])assert.ok(assets.files[poses.finish[name]]);
 });
 
 test('首頁、題量、通關密碼及JS版本一致',()=>{
