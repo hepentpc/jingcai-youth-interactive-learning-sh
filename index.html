@@ -10,7 +10,15 @@
   <style>
     /* 高中篇為三位主角，避免原版通關頁四欄網格留下空白。 */
     .finish-cast{grid-template-columns:repeat(3,minmax(0,1fr));max-width:470px;}
-    .welcome-copy h1 span{overflow-wrap:anywhere;}
+    /* 首頁主題鎖定兩行：手機及桌機均不拆開 young talk。 */
+    .welcome-copy .welcome-main-title{font-size:clamp(36px,4.8vw,64px);line-height:1.26;letter-spacing:-.055em;}
+    .welcome-copy .welcome-main-title .title-line{display:block;white-space:nowrap;overflow-wrap:normal;}
+    .welcome-copy .welcome-main-title .title-line:first-child{color:var(--ink);}
+    .welcome-copy .welcome-main-title .title-line:last-child{color:var(--rose);font-size:.70em;letter-spacing:-.025em;}
+    @media(max-width:650px){
+      .welcome-copy .welcome-main-title{font-size:clamp(34px,8vw,48px);}
+      .welcome-copy .welcome-main-title .title-line:last-child{font-size:.72em;}
+    }
   </style>
   <script defer src="./data/scenes.js?v=sh20261025v2"></script>
   <script defer src="./data/presence.js?v=sh20261025v2"></script>
@@ -23,7 +31,7 @@
   <header class="topbar">
     <a class="brand" href="./" aria-label="經彩青春 SET 首頁">
       <span class="brand-symbol" aria-hidden="true">✿</span>
-      <span><strong>經彩青春 <em>SET</em></strong><small>高中互動劇場・守護 528 young talk</small></span>
+      <span><strong>經彩青春 <em>SET</em></strong><small>月經教育 × 概念形成</small></span>
     </a>
     <div class="top-meta">
       <span id="headerStars" class="meta-pill meta-stars" hidden>✦ <b id="starCount">0</b>／12</span>
@@ -35,7 +43,10 @@
     <section id="welcome" class="view welcome" aria-labelledby="welcomeTitle">
       <div class="welcome-copy">
         <p class="eyebrow">月經教育 × 概念形成</p>
-        <h1 id="welcomeTitle">高中<span>守護 528：青春同盟 young talk</span></h1>
+        <h1 id="welcomeTitle" class="welcome-main-title">
+          <span class="title-line">守護 528：</span>
+          <span class="title-line">青春同盟 young talk</span>
+        </h1>
         <p class="intro">透過月經議題論壇的探究與討論，引領所有人共創同理關懷、友善支持的月經平權世代！</p>
         <div class="intro-stats"><span>📖 26 幕劇情</span><span>✦ 12 題互動挑戰</span><span>🏆 1 組通關密碼</span></div>
         <div class="howto"><h2>遊戲怎麼玩？</h2><p><b>01 看故事</b>　參與「青春同盟 young talk」線上論壇</p><p><b>02 選答案</b>　A／B／C 三選一，答錯可以重試</p><p><b>03 學知識</b>　答對才能進入下一幕，解鎖知識徽章與通關密碼</p></div>
