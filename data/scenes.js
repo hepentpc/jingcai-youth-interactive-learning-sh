@@ -575,7 +575,7 @@ window.JINGCAI_DATA = {
   ],
   "ending": {
     "title": "恭喜你成功通關！",
-    "text": "月經衛生與平權！",
+    "text": "",
     "code": "0451",
     "meaning": "你是唯一"
   }
