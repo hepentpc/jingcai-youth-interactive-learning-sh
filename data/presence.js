@@ -1,160 +1,159 @@
-/* 高中篇各幕人物與舞臺設定；所有圖像為預留空間。 */
+/* 青春同盟 young talk：各幕人物與線上論壇背景配置。 */
 window.JINGCAI_STAGE = {
   "characters": {
-    "思婷": {
-      "id": "siting",
-      "tagline": "從學測壓力與經期困擾出發，學習認識自己的身體。"
+    "青青": {
+      "id": "qingqing",
+      "tagline": "校園社牛代表，細心且具國際視野的高中女學生。"
     },
-    "立宏": {
-      "id": "lihong",
-      "tagline": "從同理夥伴走向行動，探索全球公民的責任。"
+    "大春": {
+      "id": "dachun",
+      "tagline": "超有同理心，大家心中最佳神隊友的高中男學生。"
     },
     "馬拉拉": {
       "id": "malala",
-      "tagline": "從教育、人權與倡議出發，分享月經平權的觀點。"
+      "tagline": "國際青年楷模，化身經彩知識導師。"
     }
   },
   "locations": {
-    "summit": {
-      "className": "location-summit",
-      "label": "國際青年女性高峰會"
-    },
-    "dining": {
-      "className": "location-dining",
-      "label": "午餐交流"
-    },
-    "forum": {
+    "online": {
       "className": "location-forum",
-      "label": "國際專題論壇"
+      "label": "守護 528：青春同盟 young talk 線上論壇"
     }
   },
   "pages": {
     "1": {
-      "location": "summit",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
-        "馬拉拉"
-      ],
-      "focus": []
-    },
-    "2": {
-      "location": "summit",
-      "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "思婷"
+        "大春",
+        "青青"
+      ]
+    },
+    "2": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "大春",
+        "青青"
       ]
     },
     "3": {
-      "location": "summit",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "馬拉拉"
+        "大春",
+        "青青"
       ]
     },
     "4": {
-      "location": "summit",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "思婷"
+        "馬拉拉"
       ]
     },
     "5": {
-      "location": "summit",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "馬拉拉",
-        "立宏"
+        "青青",
+        "大春"
       ]
     },
     "6": {
-      "location": "summit",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "思婷"
+        "馬拉拉"
       ]
     },
     "7": {
-      "location": "summit",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "馬拉拉"
+        "大春",
+        "青青"
       ]
     },
     "8": {
-      "location": "dining",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "立宏"
+        "馬拉拉"
       ]
     },
     "9": {
-      "location": "dining",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "馬拉拉"
+        "大春",
+        "青青"
       ]
     },
     "10": {
-      "location": "forum",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "馬拉拉",
-        "立宏"
+        "馬拉拉"
       ]
     },
     "11": {
-      "location": "forum",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "馬拉拉"
+        "大春",
+        "青青"
       ]
     },
     "12": {
-      "location": "forum",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
@@ -162,38 +161,163 @@ window.JINGCAI_STAGE = {
       ]
     },
     "13": {
-      "location": "forum",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "馬拉拉"
+        "大春",
+        "青青"
       ]
     },
     "14": {
-      "location": "summit",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "立宏",
-        "思婷"
+        "馬拉拉"
       ]
     },
     "15": {
-      "location": "summit",
+      "location": "online",
       "cast": [
-        "思婷",
-        "立宏",
+        "青青",
+        "大春",
         "馬拉拉"
       ],
       "focus": [
-        "思婷",
-        "立宏",
+        "大春",
+        "青青"
+      ]
+    },
+    "16": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "馬拉拉"
+      ]
+    },
+    "17": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "大春",
+        "青青"
+      ]
+    },
+    "18": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "馬拉拉"
+      ]
+    },
+    "19": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "大春",
+        "青青"
+      ]
+    },
+    "20": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "馬拉拉"
+      ]
+    },
+    "21": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "大春",
+        "青青"
+      ]
+    },
+    "22": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "馬拉拉"
+      ]
+    },
+    "23": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "大春",
+        "青青"
+      ]
+    },
+    "24": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "馬拉拉"
+      ]
+    },
+    "25": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
+        "大春",
+        "青青"
+      ]
+    },
+    "26": {
+      "location": "online",
+      "cast": [
+        "青青",
+        "大春",
+        "馬拉拉"
+      ],
+      "focus": [
         "馬拉拉"
       ]
     }
